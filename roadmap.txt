@@ -1,0 +1,151 @@
+Got it ✅ Aryan! Let’s build a **phase-wise, module-wise roadmap** for **SkillUp Intern – Active Learning for Internship Readiness**.
+
+I’ll break it down into **phases** (milestones) and **modules** (functional components in each phase).
+
+---
+
+# 🚀 SkillUp Intern Roadmap
+
+---
+
+## **Phase 1: Foundation & Setup (Week 1–2)**
+
+**Goal:** Establish core structure, tech stack, and basic user flow.
+
+**Modules:**
+
+1. **Project Setup**
+
+   * Tech stack selection (Next.js, Node.js/Express, MongoDB, Tailwind CSS, JWT/Auth system).
+   * GitHub repo, CI/CD setup.
+
+2. **Authentication System**
+
+   * Student login/registration.
+   * Profile creation with basic details (name, domain of interest, current skills).
+   * Admin login for posting internships.
+
+3. **Database Models**
+
+   * User (Student, Admin).
+   * Internship (Company, Title, Skills required).
+   * Skills (list of structured skills).
+
+---
+
+## **Phase 2: Internship Discovery & Skill Profiling (Week 3–4)**
+
+**Goal:** Build internship search and student skill profile system.
+
+**Modules:**
+
+1. **Internship Search**
+
+   * Filter internships by domain, company, or skills.
+   * Internship detail page with required skills.
+
+2. **Student Skill Profile**
+
+   * Students manually input known skills.
+   * Option to upload resume → auto-extract skills (later phase).
+
+3. **Skill Gap Analyzer (Basic)**
+
+   * Compare student profile with internship requirements.
+   * Highlight missing skills in dashboard.
+
+---
+
+## **Phase 3: Active Learning (Week 5–7)**
+
+**Goal:** Provide learning paths for missing skills with interactivity.
+
+**Modules:**
+
+1. **Learning Path Generator**
+
+   * For each missing skill → structured path (Basics → Quizzes → Projects).
+   * Store progress in DB.
+
+2. **Quizzes & Practice Sets**
+
+   * Skill-based quizzes (MCQs, coding exercises).
+   * Timed challenges.
+
+3. **Mini Projects**
+
+   * Small domain-specific projects (e.g., SQL query tasks, Python scripts).
+   * Auto-evaluation for some skills (like coding).
+
+---
+
+## **Phase 4: Gamification & Progress Tracking (Week 8–9)**
+
+**Goal:** Boost engagement and motivation.
+
+**Modules:**
+
+1. **Gamification Layer**
+
+   * Points for quiz/project completion.
+   * Badges for milestones (e.g., “SQL Beginner”, “Python Pro”).
+
+2. **Progress Dashboard**
+
+   * Graphs showing completed modules.
+   * Skill mastery percentage.
+
+---
+
+## **Phase 5: Predictive Internship Fit & Recommendations (Week 10–12)**
+
+**Goal:** Use data to guide students to right internships.
+
+**Modules:**
+
+1. **Predictive Fit Algorithm**
+
+   * Based on quizzes, projects completed → calculate readiness score.
+   * Show percentage fit for each internship.
+
+2. **Internship Recommendations**
+
+   * Suggest internships where student has high readiness.
+   * Suggest next skill to learn for desired internship.
+
+---
+
+## **Phase 6: Advanced Features & Expansion (Week 13–14)**
+
+**Goal:** Add intelligent features and polish the platform.
+
+**Modules:**
+
+1. **Resume Parser (AI/NLP Integration)**
+
+   * Auto-detect skills from uploaded resumes.
+
+2. **Analytics for Admins**
+
+   * Which skills are most in demand.
+   * Student performance insights.
+
+3. **Community & Collaboration**
+
+   * Peer-to-peer discussions.
+   * Group challenges/contests.
+
+---
+
+# 📊 Final Deliverable
+
+By end of **14 weeks**, the platform will have:
+✅ Internship Search & Skill Gap Analyzer
+✅ Personalized Learning Paths (Quizzes + Projects)
+✅ Gamified Progress & Dashboard
+✅ Predictive Internship Fit & Recommendations
+✅ Admin Analytics & Resume Parser
+
+---
+
+Do you want me to also **map technologies for each module** (like Next.js pages, APIs, MongoDB schemas, etc.) so it looks like a **developer-ready breakdown**?

@@ -34,14 +34,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#e6fffb]">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#0f172a] via-[#064e3b] to-[#0ea5e9]">
       {/* Subtle decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-teal-400/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-300/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative bg-white/95 backdrop-blur-xl p-8 rounded-3xl shadow-xl w-96 border border-teal-200">
+      <div className="relative bg-white/95 backdrop-blur-xl p-8 rounded-3xl shadow-xl w-96 border border-cyan-200">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
