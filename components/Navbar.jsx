@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full border-b border-black/10 dark:border-white/15 bg-background text-foreground">
+    <header className="w-full border-b border-teal-200 bg-[#e6fffb] text-foreground">
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex items-center gap-4">
         {/* Left group: logo + middle links */}
         <div className="flex items-center gap-6">

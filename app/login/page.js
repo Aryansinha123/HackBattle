@@ -34,28 +34,28 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl"></div>
+    <div className="flex items-center justify-center min-h-screen bg-[#e6fffb]">
+      {/* Subtle decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-teal-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-300/10 rounded-full blur-3xl"></div>
       </div>
-      
-      <div className="relative bg-slate-800/90 backdrop-blur-xl p-8 rounded-3xl shadow-2xl w-96 border border-slate-700/50">
+
+      <div className="relative bg-white/95 backdrop-blur-xl p-8 rounded-3xl shadow-xl w-96 border border-teal-200">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <Lock className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-3xl font-bold text-white mb-2">Welcome Back</h2>
-          <p className="text-slate-400 text-sm">Please sign in to your account</p>
+          <h2 className="text-3xl font-bold text-teal-800 mb-2">Welcome Back</h2>
+          <p className="text-slate-600 text-sm">Please sign in to your account</p>
         </div>
 
         {/* Form */}
         <div className="space-y-6">
           {/* Email Input */}
           <div className="relative">
-            <label className="block text-slate-300 text-sm font-medium mb-2">
+            <label className="block text-slate-700 text-sm font-medium mb-2">
               Email Address
             </label>
             <div className="relative">
@@ -63,7 +63,7 @@ export default function LoginPage() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full pl-10 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                className="w-full pl-10 pr-4 py-3 bg-white border border-teal-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-transparent transition-all duration-200"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
@@ -73,7 +73,7 @@ export default function LoginPage() {
 
           {/* Password Input */}
           <div className="relative">
-            <label className="block text-slate-300 text-sm font-medium mb-2">
+            <label className="block text-slate-700 text-sm font-medium mb-2">
               Password
             </label>
             <div className="relative">
@@ -81,7 +81,7 @@ export default function LoginPage() {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter your password"
-                className="w-full pl-10 pr-12 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                className="w-full pl-10 pr-12 py-3 bg-white border border-teal-200 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-transparent transition-all duration-200"
                 value={form.password}
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
                 required
@@ -89,7 +89,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-300 transition-colors duration-200 focus:outline-none"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors duration-200 focus:outline-none"
               >
                 {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
               </button>
@@ -100,7 +100,7 @@ export default function LoginPage() {
           <button
             onClick={handleSubmit}
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white p-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none shadow-lg"
+            className="w-full bg-teal-600 hover:bg-teal-700 text-white p-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none shadow-md"
           >
             {isLoading ? (
               <div className="flex items-center justify-center">
@@ -117,8 +117,8 @@ export default function LoginPage() {
         {message && (
           <div className={`mt-6 p-3 rounded-xl text-sm text-center ${
             message.toLowerCase().includes('error') || message.toLowerCase().includes('invalid')
-              ? 'bg-red-900/50 border border-red-700 text-red-300'
-              : 'bg-green-900/50 border border-green-700 text-green-300'
+              ? 'bg-red-50 border border-red-200 text-red-700'
+              : 'bg-teal-50 border border-teal-200 text-teal-700'
           }`}>
             {message}
           </div>
@@ -126,9 +126,9 @@ export default function LoginPage() {
 
         {/* Footer */}
         <div className="mt-8 text-center">
-          <p className="text-slate-400 text-sm">
+          <p className="text-slate-600 text-sm">
             Don't have an account?{" "}
-            <a href="/register" className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200">
+            <a href="/register" className="text-teal-700 hover:text-teal-800 font-medium transition-colors duration-200">
               Sign up
             </a>
           </p>

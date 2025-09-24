@@ -1,103 +1,116 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="font-sans">
+      {/* Hero Section */}
+      <section className="px-6 sm:px-10 md:px-16 lg:px-24 py-16 sm:py-24 bg-[#e6fffb]">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 className="text-3xl sm:text-5xl font-bold text-teal-900 leading-tight">
+              Don’t just search for internships. Be ready for them.
+            </h1>
+            <p className="mt-4 text-slate-700 text-base sm:text-lg">
+              Identify your skill gaps, learn actively, and land your dream internship with confidence.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/internships" className="inline-flex items-center justify-center rounded-md bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 text-sm sm:text-base">Find Internships</Link>
+              <Link href="/exercises" className="inline-flex items-center justify-center rounded-md border border-teal-300 text-teal-800 hover:bg-teal-50 px-4 py-2 text-sm sm:text-base">Start Learning</Link>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="aspect-[4/3] w-full rounded-2xl bg-white border border-teal-200 shadow-sm flex items-center justify-center">
+              <div className="grid grid-cols-3 gap-3 p-6 w-full max-w-sm">
+                <div className="h-20 rounded-lg bg-teal-50 border border-teal-200" />
+                <div className="h-20 rounded-lg bg-cyan-50 border border-teal-200" />
+                <div className="h-20 rounded-lg bg-teal-50 border border-teal-200" />
+                <div className="h-20 rounded-lg bg-cyan-50 border border-teal-200" />
+                <div className="h-20 rounded-lg bg-teal-50 border border-teal-200" />
+                <div className="h-20 rounded-lg bg-cyan-50 border border-teal-200" />
+              </div>
+            </div>
+            <p className="mt-3 text-center text-xs text-slate-500">Students progressing from skills → internship</p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Core Features */}
+      <section className="px-6 sm:px-10 md:px-16 lg:px-24 py-14">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-emerald-900">Core Features</h2>
+          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <Feature title="Internship Search" desc="Filter by skills & domains." />
+            <Feature title="Skill Gap Analyzer" desc="Detect missing skills instantly." />
+            <Feature title="Learning Paths" desc="Quizzes, practice sets, projects." />
+            <Feature title="Gamification" desc="Points, badges, progress tracking." />
+            <Feature title="Fit Prediction" desc="Smart recommendations for you." />
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="px-6 sm:px-10 md:px-16 lg:px-24 py-14 bg-teal-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-teal-900">How It Works</h2>
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
+            <Step num="1" title="Choose an internship" />
+            <Step num="2" title="Find missing skills" />
+            <Step num="3" title="Learn & apply with confidence" />
+          </div>
+        </div>
+      </section>
+
+      {/* Progress & Motivation */}
+      <section className="px-6 sm:px-10 md:px-16 lg:px-24 py-14">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-teal-900">Track your progress</h2>
+            <p className="mt-3 text-slate-700">Earn badges, track growth, and stay motivated.</p>
+          </div>
+          <div className="rounded-2xl border border-teal-200 p-6 bg-white shadow-sm">
+            <div className="h-3 w-full bg-teal-100 rounded-full overflow-hidden">
+              <div className="h-full w-2/3 bg-teal-500" />
+            </div>
+            <div className="mt-4 grid grid-cols-3 gap-3 text-center text-sm">
+              <div className="rounded-lg bg-teal-50 border border-teal-200 p-3">Badge: Explorer</div>
+              <div className="rounded-lg bg-teal-50 border border-teal-200 p-3">Quizzes: 12</div>
+              <div className="rounded-lg bg-teal-50 border border-teal-200 p-3">Projects: 3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 sm:px-10 md:px-16 lg:px-24 py-16 bg-[#e6fffb]">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-teal-900">Start your journey today.</h2>
+          <div className="mt-6 flex flex-wrap gap-3 justify-center">
+            <Link href="/register" className="inline-flex items-center justify-center rounded-md bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 text-sm sm:text-base">Sign Up Free</Link>
+            <Link href="/internships" className="inline-flex items-center justify-center rounded-md border border-teal-300 text-teal-800 hover:bg-teal-50 px-4 py-2 text-sm sm:text-base">Explore Internships</Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function Feature({ title, desc }) {
+  return (
+    <div className="rounded-2xl border border-emerald-200 bg-white p-5 shadow-sm">
+      <h3 className="font-semibold text-emerald-900">{title}</h3>
+      <p className="mt-1 text-sm text-slate-700">{desc}</p>
+    </div>
+  );
+}
+
+function Step({ num, title }) {
+  return (
+    <div className="rounded-2xl border border-emerald-200 bg-white p-5 shadow-sm text-center">
+      <div className="mx-auto mb-3 h-10 w-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-semibold">
+        {num}
+      </div>
+      <p className="text-slate-700">{title}</p>
     </div>
   );
 }
