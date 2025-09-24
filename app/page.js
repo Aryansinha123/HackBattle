@@ -16,7 +16,7 @@ export default function Home() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/internships" className="inline-flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20 text-white px-4 py-2 text-sm sm:text-base border border-white/20">Find Internships</Link>
-              <Link href="/exercises" className="inline-flex items-center justify-center rounded-md border border-white/20 text-white hover:bg-white/10 px-4 py-2 text-sm sm:text-base">Start Learning</Link>
+              <Link href="/domains" className="inline-flex items-center justify-center rounded-md border border-white/20 text-white hover:bg-white/10 px-4 py-2 text-sm sm:text-base">Start Learning</Link>
             </div>
           </div>
           <div className="relative">

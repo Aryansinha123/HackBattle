@@ -1,46 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SkillUp - Exercises Backend Integration
 
-## Environment setup
+## Prerequisites
+- Node.js 18+
+- MongoDB connection string
+- Judge0 CE (or RapidAPI Judge0) endpoint for server code execution (optional)
 
-Create a `.env.local` file in the project root with:
+## Environment Variables
+Create `.env.local` in the project root:
 
 ```
-MONGO_URI=mongodb+srv://sinhaaryan173_db_user:<db_password>@skillupcluster.wxpj43u.mongodb.net/?retryWrites=true&w=majority&appName=SkillUpCluster
+MONGODB_URI=mongodb+srv://<user>:<pass>@<cluster>/<db>?retryWrites=true&w=majority
+# Base URL for server-side fetches (include protocol). For local dev:
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+# Judge0 configuration (optional, needed for server execution)
+JUDGE0_URL=https://judge0-ce.p.rapidapi.com
+JUDGE0_KEY=your_rapidapi_key_optional
 ```
 
-Replace `<db_password>` with your actual password.
+If running a local Judge0 CE, set `JUDGE0_URL` to your instance (e.g. `http://localhost:2358`).
 
-## Getting Started
+## Install & Seed
+```
+npm install
+node scripts/seed.js
+```
 
-First, run the development server:
-
-```bash
+## Run Dev Server
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Navigation Flow
+- Sidebar → Exercises by Topic → `'/domains'`
+- Domain list → `'/domains/:domain'`
+- Exercise detail → `'/domains/:domain/:slug'`
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## APIs
+- `GET /api/domains` → list domains
+- `GET /api/domains/:id` → get domain
+- `GET /api/domains/:id/exercises` → list exercises in a domain
+- `GET /api/exercises/:domain/:slug` → get exercise details
+- `POST /api/run` → run code via Judge0
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Body example for `/api/run`:
+```
+{
+  "language": "javascript",
+  "source": "function solve(input){return input}\nmodule.exports={solve};",
+  "input": "hello"
+}
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Sourcing Problems
+You can extend the seed with curated datasets or import from your own CSV/JSON. Public sources like LeetCode/Codeforces terms restrict direct scraping/embedding; prefer your own authored problems or open datasets (e.g., Kattis open problems metadata only, not statements). This repo uses local sample problems to avoid licensing issues.
