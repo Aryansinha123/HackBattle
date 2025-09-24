@@ -1,7 +1,12 @@
 import Link from 'next/link';
 
 async function fetchDomains() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/domains`, { next: { revalidate: 60 } });
+  const base = process.env.NEXT_PUBLIC_BASE_URL;
+  if (!base) {
+    // During build we may not have a base URL; return empty to avoid invalid URL errors
+    return [];
+  }
+  const res = await fetch(`${base}/api/domains`, { next: { revalidate: 60 } });
   if (!res.ok) return [];
   return res.json();
 }

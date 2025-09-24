@@ -13,7 +13,7 @@ export default function DsaQuestionDetail() {
   const [question, setQuestion] = useState(null);
 
   useEffect(() => {
-    fetch("/api/questions")
+    fetch("/api/dsa")
       .then((res) => res.json())
       .then((data) => {
         const q = data.find((item) => item.id === id);
