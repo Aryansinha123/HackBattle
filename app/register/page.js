@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock, User, UserPlus } from "lucide-react";
 
-export default function LoginPage() {
-  const [form, setForm] = useState({ email: "", password: "" });
+export default function RegisterPage() {
+  const [form, setForm] = useState({ username: "", email: "", password: "" });
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +14,7 @@ export default function LoginPage() {
     setIsLoading(true);
 
     try {
-      const res = await fetch("/api/login", {
+      const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -45,14 +45,32 @@ export default function LoginPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <Lock className="w-8 h-8 text-white" />
+            <UserPlus className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-3xl font-bold text-white mb-2">Welcome Back</h2>
-          <p className="text-slate-400 text-sm">Please sign in to your account</p>
+          <h2 className="text-3xl font-bold text-white mb-2">Create Account</h2>
+          <p className="text-slate-400 text-sm">Join us today and get started</p>
         </div>
 
         {/* Form */}
         <div className="space-y-6">
+          {/* Username Input */}
+          <div className="relative">
+            <label className="block text-slate-300 text-sm font-medium mb-2">
+              Username
+            </label>
+            <div className="relative">
+              <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
+              <input
+                type="text"
+                placeholder="Choose a username"
+                className="w-full pl-10 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                value={form.username}
+                onChange={(e) => setForm({ ...form, username: e.target.value })}
+                required
+              />
+            </div>
+          </div>
+
           {/* Email Input */}
           <div className="relative">
             <label className="block text-slate-300 text-sm font-medium mb-2">
@@ -80,7 +98,7 @@ export default function LoginPage() {
               <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input
                 type={showPassword ? "text" : "password"}
-                placeholder="Enter your password"
+                placeholder="Password (min 8 chars)"
                 className="w-full pl-10 pr-12 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                 value={form.password}
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
@@ -105,10 +123,10 @@ export default function LoginPage() {
             {isLoading ? (
               <div className="flex items-center justify-center">
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></div>
-                Signing In...
+                Creating Account...
               </div>
             ) : (
-              "Sign In"
+              "Create Account"
             )}
           </button>
         </div>
@@ -116,7 +134,7 @@ export default function LoginPage() {
         {/* Message Display */}
         {message && (
           <div className={`mt-6 p-3 rounded-xl text-sm text-center ${
-            message.toLowerCase().includes('error') || message.toLowerCase().includes('invalid')
+            message.toLowerCase().includes('error') || message.toLowerCase().includes('invalid') || message.toLowerCase().includes('exists')
               ? 'bg-red-900/50 border border-red-700 text-red-300'
               : 'bg-green-900/50 border border-green-700 text-green-300'
           }`}>
@@ -127,9 +145,9 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="mt-8 text-center">
           <p className="text-slate-400 text-sm">
-            Don't have an account?{" "}
-            <a href="/register" className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200">
-              Sign up
+            Already have an account?{" "}
+            <a href="/login" className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200">
+              Sign in
             </a>
           </p>
         </div>

@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Environment setup
+
+Create a `.env.local` file in the project root with:
+
+```
+MONGO_URI=mongodb+srv://sinhaaryan173_db_user:<db_password>@skillupcluster.wxpj43u.mongodb.net/?retryWrites=true&w=majority&appName=SkillUpCluster
+```
+
+Replace `<db_password>` with your actual password.
+
 ## Getting Started
 
 First, run the development server:
